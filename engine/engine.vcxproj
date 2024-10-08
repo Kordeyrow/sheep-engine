@@ -102,6 +102,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\dev\SheepEngine\SheepEngineSolution\engine\src\dllmain;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -120,6 +121,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\dev\SheepEngine\SheepEngineSolution\engine\src\dllmain;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -138,6 +140,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\dev\SheepEngine\SheepEngineSolution\engine\src\dllmain;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -156,6 +159,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\dev\SheepEngine\SheepEngineSolution\engine\src\dllmain;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -167,21 +171,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\scene.h" />
-    <ClInclude Include="src\engine.h" />
-    <ClInclude Include="src\framework.h" />
-    <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\utils\logger.h" />
+    <ClInclude Include="src\core\scene.h" />
+    <ClInclude Include="src\core\engine.h" />
+    <ClInclude Include="src\dllmain\framework.h" />
+    <ClInclude Include="src\dllmain\pch.h" />
+    <ClInclude Include="src\math\vector2.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\scene.cpp" />
-    <ClCompile Include="src\engine.cpp" />
-    <ClCompile Include="src\dllmain.cpp" />
-    <ClCompile Include="src\pch.cpp">
+    <ClCompile Include="src\utils\logger.cpp" />
+    <ClCompile Include="src\core\scene.cpp" />
+    <ClCompile Include="src\core\engine.cpp" />
+    <ClCompile Include="src\dllmain\dllmain.cpp" />
+    <ClCompile Include="src\dllmain\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\math\vector2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

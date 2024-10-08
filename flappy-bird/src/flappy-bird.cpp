@@ -1,6 +1,6 @@
 #include <iostream>
-#include <engine.h>
-#include <scene.h>
+#include <core/engine.h>
+#include <core/scene.h>
 
 int main()
 {
