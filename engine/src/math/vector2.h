@@ -1,8 +1,8 @@
 #pragma once
-#include "../utils/logger.h"
+#include <utils/logger.h>
 #include <cassert>
 
-class Vector2 {
+class __declspec(dllexport) Vector2 {
 public:
 	float x = 0;
 	float y = 0;

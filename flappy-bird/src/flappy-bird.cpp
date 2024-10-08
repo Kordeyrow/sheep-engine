@@ -4,6 +4,7 @@
 
 int main()
 {
+    Vector2 v;
     Scene s;
     Engine a;
     std::cout << "Hello World!" << std::endl;
