@@ -1,10 +1,10 @@
 #pragma once
-#include <ecs/entity/gameobject_id.h>
+#include <utils/dll_macros.h>
 
-class Component {
+class __declspec(dllexport) Component {
 public:
 	bool enabled = true;
-	GameobjectID owner;
-	Component(GameobjectID owner);
+	size_t owner;
+	Component(size_t owner) : owner(owner) {}
 };
 

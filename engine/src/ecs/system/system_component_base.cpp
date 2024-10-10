@@ -1,13 +1,24 @@
 #include <pch.h>
 #include <ecs/system/system_component_base.h>
 
-template<typename T>
-inline std::vector<T*> SystemComponentBase::GetInstances()
-{
-	auto& baseInstances = systemsComponents[typeid(T)];
-	std::vector<T*> derivedInstances;
-	for (auto* instance : baseInstances) {
-		derivedInstances.push_back(static_cast<T*>(instance));
-	}
-	return derivedInstances;
-}
+
+
+
+
+//std::unordered_map<std::type_index, std::vector<SystemComponentBase*>> SystemComponentBase::systemsComponents;
+
+
+
+
+
+
+
+
+//std::unordered_map<std::type_index, std::vector<SystemComponentBase*>> SystemComponentBase::systemsComponents;
+//static std::unordered_map<std::type_index, std::vector<SystemComponentBase*>> systemsComponents;
+
+//template <typename T>
+//std::vector<SystemComponentBase*> SystemComponentBase::get_base_instances()
+//{
+//	return systemsComponents[typeid(T)];
+//}

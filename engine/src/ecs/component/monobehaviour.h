@@ -1,8 +1,9 @@
 #pragma once
 #include <ecs/system/system_components/script_life_cycle_system_component.h>
-#include <ecs/component/component.h>
+//#include <ecs/component/component.h>
+#include <utils/dll_macros.h>
 
-class __declspec(dllexport) Monobehaviour : public Component, ScriptLifeCycleSystemComponent {
+class Monobehaviour : ScriptLifeCycleSystemComponent {
 public:
-	Monobehaviour(GameobjectID owner);
+	Monobehaviour(size_t owner) {}
 };

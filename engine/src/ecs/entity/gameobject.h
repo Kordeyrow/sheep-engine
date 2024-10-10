@@ -2,33 +2,27 @@
 #include <vector>
 #include <string>
 #include <math/vector2.h>
-#include <ecs/entity/gameobject_id.h>
 #include <ecs/component/component.h>
 #include <ecs/component/transform.h>
+#include <utils/dll_macros.h>
 
-class Gameobject {
+class __declspec(dllexport) Gameobject {
 
 private:
-	GameobjectID _id;
+	size_t _id;
 	std::vector<Component> components;
 	//// TODO: turn in to component
 	Transform transform;
 
-	static GameobjectID next_id;
+	static size_t next_id;
 public:
 	std::string name;
 
-	Gameobject(
-		std::string name = "new_Gameobject",
-		Vector2 position = Vector2{ 0,0 },
-		Vector2 size = Vector2{ 1,1 }) // Vector2{ Vector2::one })
-		:
-		name(name),
-		_id(next_id++),
-		transform(position, size)
-	{ }
+	Gameobject(std::string name,
+		Vector2 position,
+		Vector2 size);
 
-	GameobjectID id() const { return _id; };
+	size_t id() const { return _id; };
 
 	template<typename DerivedComponent>
 	DerivedComponent* get_component() {

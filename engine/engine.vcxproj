@@ -171,12 +171,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="temp\Parent.h" />
+    <ClInclude Include="temp\MyExportedClass.h" />
+    <ClInclude Include="src\utils\dll_macros.h" />
     <ClInclude Include="src\ecs\component\monobehaviour.h" />
     <ClInclude Include="src\ecs\system\system_components\physics_system_component.h" />
     <ClInclude Include="src\ecs\system\system_components\graphics_system_component.h" />
     <ClInclude Include="src\ecs\system\system_components\script_life_cycle_system_component.h" />
     <ClInclude Include="src\ecs\component\component.h" />
-    <ClInclude Include="src\ecs\entity\gameobject_id.h" />
     <ClInclude Include="src\ecs\entity\gameobject.h" />
     <ClInclude Include="src\utils\logger.h" />
     <ClInclude Include="src\core\scene.h" />
@@ -189,12 +191,14 @@
     <ClInclude Include="src\ecs\system\system_component.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="temp\Parent.cpp" />
+    <ClCompile Include="temp\MyExportedClass.cpp" />
+    <ClCompile Include="src\utils\dll_macros.cpp" />
     <ClCompile Include="src\ecs\component\monobehaviour.cpp" />
     <ClCompile Include="src\ecs\system\system_components\physics_system_component.cpp" />
     <ClCompile Include="src\ecs\system\system_components\graphics_system_component.cpp" />
     <ClCompile Include="src\ecs\system\system_components\script_life_cycle_system_component.cpp" />
     <ClCompile Include="src\ecs\component\component.cpp" />
-    <ClCompile Include="src\ecs\entity\gameobject_id.cpp" />
     <ClCompile Include="src\ecs\entity\gameobject.cpp" />
     <ClCompile Include="src\utils\logger.cpp" />
     <ClCompile Include="src\core\scene.cpp" />
