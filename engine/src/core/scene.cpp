@@ -3,12 +3,9 @@
 
 Scene::Scene()
 {
-
 }
 
-template<typename ...Args>
-inline Gameobject* Scene::add_gameobject(Args && ...args)
+Scene* Scene::get_next_scene()
 {
-	gameobjects.emplace_back(args);
-	return &gameobjects.back();
+	return this;
 }

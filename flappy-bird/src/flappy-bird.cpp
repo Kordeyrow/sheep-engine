@@ -1,24 +1,20 @@
 #include <iostream>
-#include <core/engine.h>
-#include <core/scene.h>
-#include <custom_monobehaviour.h>
-#include <../temp/MyExportedClass.h>
+#include <core/sheep_engine.h>
+#include <vector>
+#include "scenes/menu_scene.h"
 
 int main()
 {
-    //Gameobject go ;
-    size_t i = 1;
-    CustomMonobehaviour m{i};
+    std::cout << "Hello World! - main()" << std::endl;
 
-    /*MyExportedClass aaa{};
-    aaa.Test<MyExportedClass>();
-    aaa.Pa();
-    MyExportedClass::Test<MyExportedClass>();
+    SheepEngine sheep_engine;
+    sheep_engine.run_engine();
 
-    Vector2 v{0,0};
-    Scene s;*/
-    Engine a;
+    auto menu_scene = MenuScene{};
+    auto scene_list = std::vector<Scene>{ menu_scene };
+    auto start_scene_id = 0;
+    sheep_engine.run_game(scene_list, start_scene_id);
 
-    std::cout << "Hello World!" << std::endl;
     system("pause");
+    return 0;
 }

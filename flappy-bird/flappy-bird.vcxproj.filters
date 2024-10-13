@@ -18,12 +18,12 @@
     <ClCompile Include="src\flappy-bird.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\custom_monobehaviour.cpp">
+    <ClCompile Include="src\scenes\menu_scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\custom_monobehaviour.h">
+    <ClInclude Include="src\scenes\menu_scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

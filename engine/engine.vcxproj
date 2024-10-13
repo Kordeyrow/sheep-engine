@@ -171,38 +171,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="temp\Parent.h" />
-    <ClInclude Include="temp\MyExportedClass.h" />
-    <ClInclude Include="src\utils\dll_macros.h" />
-    <ClInclude Include="src\ecs\component\monobehaviour.h" />
-    <ClInclude Include="src\ecs\system\system_components\physics_system_component.h" />
-    <ClInclude Include="src\ecs\system\system_components\graphics_system_component.h" />
-    <ClInclude Include="src\ecs\system\system_components\script_life_cycle_system_component.h" />
-    <ClInclude Include="src\ecs\component\component.h" />
-    <ClInclude Include="src\ecs\entity\gameobject.h" />
-    <ClInclude Include="src\utils\logger.h" />
+    <ClInclude Include="src\core\scene_manager.h" />
+    <ClInclude Include="src\ecs\components\collider.h" />
+    <ClInclude Include="src\ecs\systems\entity_event_system.h" />
+    <ClInclude Include="src\ecs\systems\physics_system.h" />
+    <ClInclude Include="src\ecs\entity.h" />
+    <ClInclude Include="src\ecs\component.h" />
     <ClInclude Include="src\core\scene.h" />
-    <ClInclude Include="src\core\engine.h" />
+    <ClInclude Include="src\core\sheep_engine.h" />
     <ClInclude Include="src\dllmain\framework.h" />
     <ClInclude Include="src\dllmain\pch.h" />
+    <ClInclude Include="src\ecs\system.h" />
+    <ClInclude Include="src\ecs\components\transform.h" />
     <ClInclude Include="src\math\vector2.h" />
-    <ClInclude Include="src\ecs\component\transform.h" />
-    <ClInclude Include="src\ecs\system\system_component_base.h" />
-    <ClInclude Include="src\ecs\system\system_component.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="temp\Parent.cpp" />
-    <ClCompile Include="temp\MyExportedClass.cpp" />
-    <ClCompile Include="src\utils\dll_macros.cpp" />
-    <ClCompile Include="src\ecs\component\monobehaviour.cpp" />
-    <ClCompile Include="src\ecs\system\system_components\physics_system_component.cpp" />
-    <ClCompile Include="src\ecs\system\system_components\graphics_system_component.cpp" />
-    <ClCompile Include="src\ecs\system\system_components\script_life_cycle_system_component.cpp" />
-    <ClCompile Include="src\ecs\component\component.cpp" />
-    <ClCompile Include="src\ecs\entity\gameobject.cpp" />
-    <ClCompile Include="src\utils\logger.cpp" />
+    <ClCompile Include="src\core\scene_manager.cpp" />
+    <ClCompile Include="src\ecs\components\collider.cpp" />
+    <ClCompile Include="src\ecs\systems\entity_event_system.cpp" />
+    <ClCompile Include="src\ecs\systems\physics_system.cpp" />
+    <ClCompile Include="src\ecs\entity.cpp" />
+    <ClCompile Include="src\ecs\component.cpp" />
     <ClCompile Include="src\core\scene.cpp" />
-    <ClCompile Include="src\core\engine.cpp" />
+    <ClCompile Include="src\core\sheep_engine.cpp" />
     <ClCompile Include="src\dllmain\dllmain.cpp" />
     <ClCompile Include="src\dllmain\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -210,10 +201,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\ecs\system.cpp" />
+    <ClCompile Include="src\ecs\components\transform.cpp" />
     <ClCompile Include="src\math\vector2.cpp" />
-    <ClCompile Include="src\ecs\component\transform.cpp" />
-    <ClCompile Include="src\ecs\system\system_component_base.cpp" />
-    <ClCompile Include="src\ecs\system\system_component.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

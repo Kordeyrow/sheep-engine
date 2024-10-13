@@ -183,11 +183,11 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\custom_monobehaviour.cpp" />
+    <ClCompile Include="src\scenes\menu_scene.cpp" />
     <ClCompile Include="src\flappy-bird.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\custom_monobehaviour.h" />
+    <ClInclude Include="src\scenes\menu_scene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
