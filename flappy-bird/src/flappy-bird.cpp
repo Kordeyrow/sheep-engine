@@ -13,7 +13,8 @@ int main()
     auto menu_scene = MenuScene{};
     auto scene_list = std::vector<Scene>{ menu_scene };
     auto start_scene_id = 0;
-    sheep_engine.run_game(scene_list, start_scene_id);
+    GameData data{ scene_list, start_scene_id };
+    sheep_engine.run_game(data);
 
     system("pause");
     return 0;

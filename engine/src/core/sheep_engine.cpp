@@ -1,8 +1,10 @@
 #include <pch.h>
-#include <core/sheep_engine.h>
 #include <iostream>
+#include <SDL.h>
+#include <core/sheep_engine.h>
+#include "app.h"
 
-SheepEngine::SheepEngine() 
+SheepEngine::SheepEngine()
 {
 
 }
@@ -12,28 +14,33 @@ void SheepEngine::run_engine()
 	// TODO: scene config, serialization, inspector
 }
 
-void SheepEngine::run_game(std::vector<Scene> _scene_list, int _start_scene_id)
+void SheepEngine::run_game(GameData data)
 {
-	if (_scene_list.empty())
-	{
-		std::cout << "Error: Can NOT start game. Scene list is empty" << std::endl;
+	game = new Game{ data };
+	if (game->is_valid() == false) {
+		std::cout << "Game data not valid" << std::endl;
 		return;
 	}
+	game->init();
 
-	if (_start_scene_id < 0 || _start_scene_id >= _scene_list.size())
+	scene_manager = new SceneManager(game->data.scene_list);
+
+	App& app = App::get_instance();
+	while (app.is_closed() == false)
 	{
-		std::cout << "Error: Can NOT start game. Wrong start scene id" << std::endl;
-		return;
-	}
-
-	scene_list = _scene_list;
-	start_scene_id = _start_scene_id;
-	scene_manager = new SceneManager(scene_list);
-
-	while (current_scene)
-	{
-		entity_event_system.run();
+		/*entity_event_system.run();
 		physics_system.run();
-		current_scene = scene_manager->get_next_scene();
+		if (scene_manager->should_change_scene()) {
+			current_scene = scene_manager->get_next_scene();
+		}*/
 	}
+}
+
+static double calculate_elapsed_time() {
+	static uint32_t prev = SDL_GetTicks();
+	static uint32_t now = 0;
+	now = SDL_GetTicks();
+	double elapsedTime = (now - prev) / 1000.0f; // Convert to seconds.
+	prev = SDL_GetTicks();
+	return elapsedTime;
 }

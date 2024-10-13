@@ -2,19 +2,17 @@
 #include "scene.h"
 #include "scene_manager.h"
 #include <vector>
+#include "game.h"
+#include "game_data.h"
 
 class __declspec(dllexport) SheepEngine {
 public:
 	SheepEngine();
 	void run_engine();
-	void run_game(std::vector<Scene> scene_list, int start_scene_id);
+	void run_game(GameData data);
 private:
-	// scene
-	std::vector<Scene> scene_list;
-	int start_scene_id;
-	Scene* current_scene;
+	Game* game;
 	SceneManager* scene_manager;
-	// system
 	PhysicsSystem physics_system;
 	EntityEventSystem entity_event_system;
 };
