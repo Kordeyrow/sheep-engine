@@ -1,10 +1,6 @@
 #include "pch.h"
 #include "physics_system.h"
 
-void PhysicsSystem::run()
-{
-}
-
-void PhysicsSystem::simulate()
+void PhysicsSystem::simulate(std::vector<Rigidbody*> rbs)
 {
 }

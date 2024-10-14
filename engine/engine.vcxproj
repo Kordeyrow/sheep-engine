@@ -171,6 +171,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\ecs\components\rigidbody.h" />
     <ClInclude Include="src\utils\singleton.h" />
     <ClInclude Include="src\core\app.h" />
     <ClInclude Include="src\core\game_data.h" />
@@ -190,6 +191,7 @@
     <ClInclude Include="src\math\vector2.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ecs\components\rigidbody.cpp" />
     <ClCompile Include="src\utils\singleton.cpp" />
     <ClCompile Include="src\core\app.cpp" />
     <ClCompile Include="src\core\game_data.cpp" />

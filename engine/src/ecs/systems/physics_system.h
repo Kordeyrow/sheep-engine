@@ -1,10 +1,12 @@
 #pragma once
 #include <ecs/system.h>
+#include <vector>
+#include <ecs/components/rigidbody.h>
 
-class __declspec(dllexport) PhysicsSystem : public System {
+class __declspec(dllexport) PhysicsSystem { //; : public System {
 public:
-	void run() override;
-private:
-	void simulate();
+	void simulate(std::vector<Rigidbody*> rbs);
+public:
+	const float simulation_delay_seconds = 0.02;
 };
 

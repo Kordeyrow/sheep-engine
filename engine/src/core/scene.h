@@ -7,6 +7,8 @@
 #include <ecs/systems/physics_system.h>
 #include <ecs/systems/entity_event_system.h>
 
+// Used to separate the Game into partitions
+// Holds the entities 
 class __declspec(dllexport) Scene {
 public:
 	Scene();
@@ -17,10 +19,12 @@ public:
 	bool validade_family_tree();
 	void insert_components_into_map(Entity& go);
 	void remove_components_from_map(Entity& go);
-private:
+	void load();
+	void unload();
+public:
+	std::unordered_map<std::type_index, std::vector<std::type_index*>> system_component_map;
 	std::string name;
 	std::vector<Entity> entity_list;
-	std::unordered_map<std::type_index, std::vector<Component*>> system_component_map;
 };
 
 template<typename Args>

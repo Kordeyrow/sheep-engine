@@ -11,6 +11,8 @@ public:
 	void run_engine();
 	void run_game(GameData data);
 private:
+	uint32_t get_current_time();
+private:
 	Game* game;
 	SceneManager* scene_manager;
 	PhysicsSystem physics_system;

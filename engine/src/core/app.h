@@ -1,6 +1,7 @@
 #pragma once
 #include <utils/singleton.h>
 
+// Enables user to close the app
 class App : public Singleton<App> {
     friend class Singleton<App>;
 public:

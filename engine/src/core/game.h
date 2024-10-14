@@ -3,10 +3,10 @@
 #include "scene.h"
 #include "game_data.h"
 
+// Holds info of the game currently running
 class Game {
 public:
 	Game(GameData data);
-	void init();
 	void close();
 	bool is_running() const;
 	bool is_valid() const;
