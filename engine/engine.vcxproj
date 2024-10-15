@@ -171,6 +171,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\ecs\components\entity_event_component.h" />
     <ClInclude Include="src\ecs\components\rigidbody.h" />
     <ClInclude Include="src\utils\singleton.h" />
     <ClInclude Include="src\core\app.h" />
@@ -191,6 +192,7 @@
     <ClInclude Include="src\math\vector2.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ecs\components\entity_event_component.cpp" />
     <ClCompile Include="src\ecs\components\rigidbody.cpp" />
     <ClCompile Include="src\utils\singleton.cpp" />
     <ClCompile Include="src\core\app.cpp" />

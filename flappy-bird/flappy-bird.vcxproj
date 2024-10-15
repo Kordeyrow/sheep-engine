@@ -183,10 +183,12 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\player_controller.cpp" />
     <ClCompile Include="src\scenes\menu_scene.cpp" />
     <ClCompile Include="src\flappy-bird.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\player_controller.h" />
     <ClInclude Include="src\scenes\menu_scene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

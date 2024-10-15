@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "scene_manager.h"
 
-SceneManager::SceneManager(std::vector<Scene> scene_list) : scene_list{ scene_list }
+SceneManager::SceneManager(std::vector<Scene*> scene_list) : scene_list{ scene_list }
 {
 }
 
@@ -20,7 +20,8 @@ void SceneManager::load_scene(int scene_index)
     if (scene_index < 0 || scene_index >= scene_list.size()) {
         return;
     }
-    scene_list[scene_index].load();
+    scene_list[scene_index]->load();
+    current_scene = scene_list[scene_index];
 }
 
 void SceneManager::change_scene(int scene_index)

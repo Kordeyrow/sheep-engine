@@ -2,7 +2,7 @@
 #include <ecs/components/transform.h>
 #include <ecs/components/collider.h>
 
-class Collider {
+class __declspec(dllexport) Collider {
 public:
     using ListenerID = std::size_t;
 

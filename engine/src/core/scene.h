@@ -12,23 +12,22 @@
 class __declspec(dllexport) Scene {
 public:
 	Scene();
-	template <typename Args>
-	Entity* add_entity(Args...);
-	bool remove_entity(Entity* ent);
+	void add_entity(Entity* ent);
+	/*bool remove_entity(Entity* ent);
 	void run_systems();
 	bool validade_family_tree();
 	void insert_components_into_map(Entity& go);
-	void remove_components_from_map(Entity& go);
+	void remove_components_from_map(Entity& go);*/
 	void load();
 	void unload();
 public:
 	std::unordered_map<std::type_index, std::vector<std::type_index*>> system_component_map;
 	std::string name;
-	std::vector<Entity> entity_list;
+	std::vector<Entity*> entity_list;
 };
 
-template<typename Args>
-inline Entity* Scene::add_entity(Args ...)
-{
-	return nullptr;
-}
+//template<typename Args>
+//inline Entity* Scene::add_entity(Args ...)
+//{
+//	return nullptr;
+//}

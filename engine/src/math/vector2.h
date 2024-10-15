@@ -1,5 +1,5 @@
 #pragma once
-class Vector2 {
+class __declspec(dllexport) Vector2 {
 public:
 	float x;
 	float y;

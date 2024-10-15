@@ -4,6 +4,7 @@
 #include <core/sheep_engine.h>
 #include "app.h"
 #include <ecs/components/rigidbody.h>
+#include <ecs/components/entity_event_component.h>
 
 SheepEngine::SheepEngine()
 {
@@ -37,11 +38,11 @@ void SheepEngine::run_game(GameData data)
 	}*/
 
 	// update system components
-	for (auto& entity : scene_manager->get_current_scene()->entity_list) {
-		for (auto& comp : entity.component_list) {
+	/*for (auto& entity : scene_manager->get_current_scene()->entity_list) {
+		for (auto& comp : entity->component_list) {
 
 		}
-	}
+	}*/
 
 	// on init
 	entity_event_system.call_on_init();
@@ -72,22 +73,51 @@ void SheepEngine::run_game(GameData data)
 		// update system components
 		
 		// entities
-		std::unordered_map<std::type_index, std::vector<std::type_index*>> system_component_map;
-		std::vector<Rigidbody*> rb_components = system_component_map[std::type_index(typeid(Rigidbody))];
+		//std::unordered_map<std::type_index, std::vector<std::type_index*>> system_component_map;
+		//std::vector<Rigidbody*> rb_components = system_component_map[std::type_index(typeid(Rigidbody))];
 		
 		// physics
 		if (sum >= physics_system.simulation_delay_seconds) {
 			sum -= physics_system.simulation_delay_seconds;
 			// TODO: check for elapsed_time_sum_seconds > 2 * physics_system.simulation_delay_seconds
+
+			std::vector<Rigidbody*> rb_components;
+			for (auto& entity : scene_manager->get_current_scene()->entity_list) {
+				if (entity->is_enabled() == false)
+					continue;
+				for (auto& comp : entity->component_list) {
+					if (comp->is_enabled() == false)
+						continue;
+					if (typeid(Rigidbody) == typeid(comp)) {
+						rb_components.push_back(static_cast<Rigidbody*>(comp));
+					}
+				}
+			}
+			
 			physics_system.simulate(rb_components);
 			entity_event_system.call_on_physics_updated();
 		}
 
-		// entity events
-		entity_event_system.call_on_update(elapsed_time);
-		if (scene_manager->should_change_scene()) {
-			//current_scene = scene_manager->get_next_scene();
+		std::vector<EntityEventComponent*> e_components;
+		for (auto& entity : scene_manager->get_current_scene()->entity_list) {
+			if (entity->is_enabled() == false)
+				continue;
+			for (Component* comp : entity->component_list) {
+				if (comp->is_enabled() == false)
+					continue;
+				EntityEventComponent* eec = dynamic_cast<EntityEventComponent*>(comp);
+				if (eec) {
+					e_components.push_back(eec);
+				}
+			}
 		}
+
+		// entity events
+		entity_event_system.call_on_update(elapsed_time, e_components);
+		//if (scene_manager->should_change_scene()) {
+		//std::cout << "Game data not valid" << std::endl;
+		//	//current_scene = scene_manager->get_next_scene();
+		//}
 	}
 }
 
